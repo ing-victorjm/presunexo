@@ -112,11 +112,11 @@ body {
 .logo { display: flex; align-items: center; gap: 11px; padding: 17px 18px 15px; border-bottom: 1px solid var(--sb-borde); }
 .logo-marca {
   width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; flex-shrink: 0;
-  background: linear-gradient(135deg, #2e6bff, #7c3aed); color: #fff; font-weight: 800; font-size: 16px;
-  letter-spacing: -.5px; box-shadow: 0 5px 16px rgba(46, 107, 255, .45);
+  box-shadow: 0 5px 16px rgba(38, 244, 244, .28);
 }
+.logo-marca svg { width: 100%; height: 100%; display: block; }
 .logo-nombre { font-weight: 800; font-size: 15px; letter-spacing: .05em; color: var(--sb-texto-fuerte); }
-.logo-nombre b { color: #6ea1ff; }
+.logo-nombre b { color: #26F4F4; }
 .logo-sub { font-size: 9.5px; color: var(--sb-texto); letter-spacing: .14em; text-transform: uppercase; margin-top: 1px; }
 
 /* --- Navegación --- */

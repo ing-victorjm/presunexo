@@ -47,6 +47,18 @@ const NAV = [
   ]},
 ];
 const RUTAS = NAV.flatMap(s => s.rutas);
+
+// Isotipo PRESUNEXO: nodos enlazados que ascienden (el "nexo" de la familia de
+// marcas) con el gradiente de ConstructorIA — cian #26F4F4 a índigo #6B71CE.
+const LOGO_SVG = `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs><linearGradient id="pnx" x1="0" y1=".15" x2="1" y2=".85">
+    <stop offset="0" stop-color="#26F4F4"/><stop offset=".55" stop-color="#4BA3D7"/><stop offset="1" stop-color="#6B71CE"/>
+  </linearGradient></defs>
+  <rect width="100" height="100" rx="24" fill="url(#pnx)"/>
+  <path d="M27 70L46 51L62 60L76 34" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="27" cy="70" r="8" fill="#fff"/><circle cx="46" cy="51" r="6.5" fill="#fff"/>
+  <circle cx="62" cy="60" r="6.5" fill="#fff"/><circle cx="76" cy="34" r="9" fill="#fff"/>
+</svg>`;
 const ALIAS = { '#/cronograma': '#/gantt' };
 
 function rutaActual() {
@@ -78,7 +90,7 @@ function renderSidebar() {
   const sb = document.getElementById('sidebar');
   sb.replaceChildren(
     el('div', { class: 'logo' },
-      el('div', { class: 'logo-marca' }, 'P'),
+      el('div', { class: 'logo-marca', html: LOGO_SVG }),
       el('div', {},
         el('div', { class: 'logo-nombre', html: 'PRESU<b>NEXO</b>' }),
         el('div', { class: 'logo-sub' }, 'Costos · Valorizaciones'))),
