@@ -1,6 +1,7 @@
 // app.js — shell v2: sidebar agrupado, topbar, tema claro/oscuro, router hash
 // y buscador global (Ctrl+K).
 import * as store from './core/store.js';
+import './core/nube.js'; // guardado por cuenta cuando se abre desde el campus
 import { resumen, arbolPlano } from './core/calc.js';
 import { fmtMoney, fmtNum } from './core/fmt.js';
 import { el, icono, modal, confirmar, toast, descargar, campo } from './ui/components.js';

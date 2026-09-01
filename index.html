@@ -17,6 +17,24 @@
     <header id="topbar"></header>
     <main id="vista"></main>
   </div>
+  <script type="module">
+    // Guardado por cuenta: si el campus abrió la app con ?t=<token>, trae los
+    // proyectos del servidor ANTES de cargar el estado local. Sin token o sin
+    // red, la app sigue con el respaldo local de siempre.
+    try {
+      const t = new URLSearchParams(location.search).get('t');
+      if (t) {
+        sessionStorage.setItem('presunexo.token', t);
+        const r = await fetch('/api/proyectos', { headers: { 'X-Token': t } });
+        if (r.ok) {
+          const d = await r.json();
+          if (d && d.estado && Array.isArray(d.estado.proyectos) && d.estado.proyectos.length) {
+            localStorage.setItem('presunexo.v1', JSON.stringify(d.estado));
+          }
+        }
+      }
+    } catch (e) { /* sin nube: continúa con lo local */ }
+  </script>
   <script type="module" src="js/app.js"></script>
 </body>
 </html>
